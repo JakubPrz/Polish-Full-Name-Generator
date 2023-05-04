@@ -5,7 +5,7 @@ setup(
     name='pfng',
     version='1.0.0',
     description='Polish full names generator',
-    long_description=(Path(__file__).parent / "README.md").read_text(),
+    long_description=(Path(__file__).parent / "README.md").read_text(encoding="utf-8"),
     long_description_content_type="text/markdown",
     author='Jakub Przepiórka',
     author_email='jakub.przepiorka.contact.me@gmail.com',
