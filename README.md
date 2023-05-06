@@ -1,6 +1,6 @@
 # Polish Full Names Generator
 **Author:** Jakub Przepiórka \
-**Version:** 1.0.0
+**Version:** 1.0.1
 
 ## About
 The generator is powered by thousands of Polish names and surnames, which allows you to create many thousands of combinations of unique full names.
@@ -12,24 +12,24 @@ This generator can help quickly insert thousands of users to database, rather th
 Programming language: Python
 
 ## Installation
-~~Install it using pip:~~ \
-~~> `pip3 install ...`~~
+Install it using pip:
+> `pip install pfng`
 
 Or clone this repository:
 > `git clone git@github.com:JakubPrz/Polish-Full-Names-Generator.git`
 
 ## Usage
 ```python
-    from pfng import generator
-    
-    people = generator.generate_full_names(number=20, gender='M&F')
-    
-    # ex1: you can print them
-    for p in people:
-        print(p)
-    
-    # ex2: or save them to file
-    with open("generated_full_names.txt", mode="w", encoding="utf-8") as file:
+from pfng.generator import generate_full_names
+
+people = generate_full_names(number=20, gender='M&F')
+
+# ex1: you can print them
+for p in people:
+    print(p)
+
+# ex2: or save them to file
+with open("generated_full_names.txt", mode="w", encoding="utf-8") as file:
     for f in people:
         file.write(f + "\n")
 ```
