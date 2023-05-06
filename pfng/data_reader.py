@@ -1,4 +1,5 @@
 from typing import List
+from pathlib import Path
 from csv import reader
 
 
@@ -19,7 +20,9 @@ def _read_from_csv(csv_path: str) -> List[str]:
     return rows
 
 
-MALE_NAMES = _read_from_csv(r'./data/male_names.csv')
-FEMALE_NAMES = _read_from_csv(r'./data/female_names.csv')
-MALE_SURNAMES = _read_from_csv(r'./data/male_surnames.csv')
-FEMALE_SURNAMES = _read_from_csv(r'./data/female_surnames.csv')
+data_dir = Path(__file__).parent / 'data'
+
+MALE_NAMES = _read_from_csv(Path(data_dir, 'male_names.csv').as_posix())
+FEMALE_NAMES = _read_from_csv(Path(data_dir, 'female_names.csv').as_posix())
+MALE_SURNAMES = _read_from_csv(Path(data_dir, 'male_surnames.csv').as_posix())
+FEMALE_SURNAMES = _read_from_csv(Path(data_dir, 'female_surnames.csv').as_posix())
