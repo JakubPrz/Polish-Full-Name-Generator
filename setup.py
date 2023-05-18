@@ -56,6 +56,9 @@ else:
 class UploadCommand(Command):
     """Support for setup.py upload."""
 
+    description = 'Build and publish the package.'
+    user_options = []
+
     @staticmethod
     def status(s):
         """Prints things in bold."""
@@ -68,7 +71,6 @@ class UploadCommand(Command):
         pass
 
     def run(self):
-        """Build and publish the package."""
         try:
             self.status('Removing previous builds...')
             rmtree(HERE / 'dist')
