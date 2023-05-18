@@ -11,6 +11,3 @@ venv/
 
 # PyCharm
 .idea/
-
-# Other
-build_deploy.sh
