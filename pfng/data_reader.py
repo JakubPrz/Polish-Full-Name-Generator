@@ -15,14 +15,13 @@ def _read_csv(csv_path: str) -> List[str]:
     """
     with open(csv_path, encoding="utf-8") as file:
         csv_reader = reader(file)
-        next(csv_reader)  # skip the header row
         rows = [r[0] for r in csv_reader]
     return rows
 
 
-data_dir = Path(__file__).parent / 'data'
+_data_dir = Path(__file__).parent / 'data'
 
-MALE_NAMES = _read_csv(Path(data_dir, 'male_names.csv').as_posix())
-FEMALE_NAMES = _read_csv(Path(data_dir, 'female_names.csv').as_posix())
-MALE_SURNAMES = _read_csv(Path(data_dir, 'male_surnames.csv').as_posix())
-FEMALE_SURNAMES = _read_csv(Path(data_dir, 'female_surnames.csv').as_posix())
+MALE_NAMES = _read_csv(Path(_data_dir, 'male_names.csv').as_posix())
+FEMALE_NAMES = _read_csv(Path(_data_dir, 'female_names.csv').as_posix())
+MALE_SURNAMES = _read_csv(Path(_data_dir, 'male_surnames.csv').as_posix())
+FEMALE_SURNAMES = _read_csv(Path(_data_dir, 'female_surnames.csv').as_posix())
